@@ -1,36 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  --color-plum-950: #1B0B22;
-  --color-plum-900: #2B1234;
-  --color-plum-800: #3D194B;
-  --color-plum-700: #552366;
-  --color-gold-antique: #C9A45C;
-  --color-gold-warm: #D8B875;
-  --color-gold-light: #F3EAD8;
-  --color-walnut: #3A2419;
-  --color-walnut-dark: #26160F;
-  --color-ivory: #F6F0E6;
-  --color-ivory-light: #FAF7F2;
-  --color-ivory-dark: #ECE3D4;
-  --color-charcoal: #1D1B1A;
-  --color-charcoal-muted: #524C4A;
-  --color-charcoal-light: #827A77;
+  --color-deep-walnut: #2B1A13;
+  --color-walnut: #4A2F20;
+  --color-chocolate: #3A241B;
+  --color-antique-brass: #B58A3C;
+  --color-champagne: #C9A96A;
+  --color-ivory: #E8DDCB;
+  --color-cream: #F4EEE3;
+  --color-sand: #B8A58D;
+  --color-charcoal: #171513;
 
   --font-serif: var(--font-cormorant), 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
   --font-sans: var(--font-manrope), 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 :root {
-  --background: #F6F0E6;
-  --foreground: #1D1B1A;
-  --plum: #1B0B22;
-  --plum-surface: #2B1234;
-  --gold: #C9A45C;
-  --gold-warm: #D8B875;
-  --walnut: #3A2419;
-  --ivory: #F6F0E6;
-  --charcoal: #1D1B1A;
+  --background: #F4EEE3;
+  --foreground: #171513;
+  --deep-walnut: #2B1A13;
+  --walnut: #4A2F20;
+  --chocolate: #3A241B;
+  --antique-brass: #B58A3C;
+  --champagne: #C9A96A;
+  --ivory: #E8DDCB;
+  --cream: #F4EEE3;
+  --sand: #B8A58D;
+  --charcoal: #171513;
+  --panel: #FFFDF8;
+  --panel-strong: #F7F1E8;
+  --line: rgba(184, 165, 141, 0.45);
 }
 
 html {
@@ -38,7 +37,9 @@ html {
 }
 
 body {
-  background-color: var(--background);
+  background:
+    radial-gradient(circle at top, rgba(181, 138, 60, 0.08), transparent 28%),
+    linear-gradient(180deg, #F4EEE3 0%, #F8F3EA 100%);
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
@@ -46,7 +47,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Editorial typography utilities */
 .font-display {
   font-family: var(--font-serif);
   letter-spacing: 0.04em;
@@ -60,27 +60,44 @@ body {
   letter-spacing: 0.28em;
 }
 
-/* Subtle luxury custom scrollbar */
+.luxury-panel {
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(181, 138, 60, 0.22);
+  box-shadow: 0 18px 45px rgba(47, 29, 22, 0.08);
+}
+
+.brass-rule {
+  height: 1px;
+  width: 72px;
+  background: linear-gradient(90deg, rgba(181, 138, 60, 0.1), rgba(181, 138, 60, 0.9), rgba(181, 138, 60, 0.1));
+}
+
+.editorial-kicker {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #B58A3C;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F6F0E6;
+  background: #F4EEE3;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C9A45C40;
+  background: rgba(181, 138, 60, 0.45);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C9A45C80;
+  background: rgba(181, 138, 60, 0.8);
 }
 
-/* Luxury text selection */
 ::selection {
-  background-color: #2B1234;
-  color: #D8B875;
+  background-color: #2F1D16;
+  color: #E8DDCB;
 }

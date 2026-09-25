@@ -8,14 +8,12 @@ export default function StudioAdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen bg-[#F6F0E6] text-[#1D1B1A]">
-      {/* Studio Navigation Sidebar */}
+    <div className="flex min-h-screen bg-[#F4EEE3] text-[#2B1A13]">
       <StudioSidebar />
 
-      {/* Main Admin Working Area */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         <StudioHeader />
-        <main className="flex-1 overflow-y-auto p-6 sm:p-8 lg:p-10">
+        <main className="flex-1 overflow-y-auto bg-[#F7F1E8] p-6 sm:p-8 lg:p-10">
           <div className="max-w-7xl mx-auto">{children}</div>
         </main>
       </div>

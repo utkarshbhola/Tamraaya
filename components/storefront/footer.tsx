@@ -1,7 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { BRAND } from "@/lib/constants";
-import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Camera, MessageCircle } from "lucide-react";
 import { generateWhatsAppUrl } from "@/lib/utils";
 
 export function StorefrontFooter() {
@@ -10,203 +10,87 @@ export function StorefrontFooter() {
   });
 
   return (
-    <footer className="bg-[#1B0B22] text-[#FAF7F2] border-t border-[#C9A45C30] pt-16 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Editorial Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-[#C9A45C20]">
-          {/* Brand Philosophy */}
-          <div className="lg:col-span-2 space-y-4">
-            <span className="font-serif text-3xl tracking-wide-editorial text-[#FAF7F2] block">
-              TAMRAAYA
-            </span>
-            <p className="text-xs uppercase tracking-editorial text-[#D8B875]">
-              {BRAND.tagline}
-            </p>
-            <p className="text-sm text-[#FAF7F2]/70 font-light leading-relaxed max-w-sm">
-              We craft heirloom kitchenware and banquet tableware from pure
-              virgin brass, copper, and bronze. Reviving ancient Indian
-              metallurgy for discerning contemporary homes.
-            </p>
-            <div className="pt-2">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-[#D8B875] hover:text-[#FAF7F2] transition-colors"
-              >
-                <MessageCircle className="w-4 h-4 text-[#25D366]" />
-                WhatsApp Concierge: {BRAND.conciergePhone}
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+    <footer className="border-t border-[#B58A3C]/30 bg-[#2B1A13] pt-16 pb-12 text-[#F4EEE3]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-10 border-b border-[#B58A3C]/20 pb-14 md:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_0.8fr_0.8fr_1.1fr]">
+          <div className="space-y-5 lg:pr-8">
+            <div className="space-y-2">
+              <span className="font-serif text-4xl leading-none tracking-[0.06em] text-[#F4EEE3]">
+                TAMRAYA
+              </span>
+              <p className="text-[10px] uppercase tracking-[0.22em] text-[#C9A96A]">
+                {BRAND.tagline}
+              </p>
             </div>
+
+            <p className="max-w-sm text-sm leading-relaxed text-[#F4EEE3]/75">
+              We craft heirloom kitchenware and banquet tableware from pure virgin brass, copper, and bronze.
+            </p>
+
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#C9A96A] transition-colors hover:text-[#F4EEE3]"
+            >
+              <MessageCircle className="h-4 w-4 text-[#25D366]" />
+              WhatsApp Concierge
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-3">
-            <span className="text-[11px] uppercase tracking-editorial font-semibold text-[#D8B875] block">
-              Curations
-            </span>
-            <ul className="space-y-2 text-xs text-[#FAF7F2]/80">
-              <li>
-                <Link
-                  href="/products"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  All Masterpieces
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/collections"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  Featured Collections
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/collections/the-artisans-collection"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  The Artisan&apos;s Collection
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/collections/heritage-brass"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  Heritage Brass Cookware
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/collections/modern-bronze"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  Modern Bronze (Kansa)
-                </Link>
-              </li>
+          <div className="space-y-4">
+            <span className="text-[10px] uppercase tracking-[0.22em] text-[#C9A96A]">Collection</span>
+            <ul className="space-y-3 text-sm text-[#F4EEE3]/80">
+              <li><Link href="/products" className="transition-colors hover:text-[#C9A96A]">All Masterpieces</Link></li>
+              <li><Link href="/collections" className="transition-colors hover:text-[#C9A96A]">Featured Collections</Link></li>
+              <li><Link href="/collections" className="transition-colors hover:text-[#C9A96A]">Curated Sets</Link></li>
             </ul>
           </div>
 
-          {/* Metals & Metallurgy */}
-          <div className="space-y-3">
-            <span className="text-[11px] uppercase tracking-editorial font-semibold text-[#D8B875] block">
-              Sacred Alloys
-            </span>
-            <ul className="space-y-2 text-xs text-[#FAF7F2]/80">
-              <li>
-                <Link
-                  href="/products?material=Brass"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  Virgin Brass (Pittal)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products?material=Copper"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  Pure Copper (Tamra)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products?material=Bronze"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  Bell Metal (Kansa)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/craft"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  Traditional Kalai (Tinning)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/craft"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  Ayurvedic Metallurgy
-                </Link>
-              </li>
+          <div className="space-y-4">
+            <span className="text-[10px] uppercase tracking-[0.22em] text-[#C9A96A]">Our Craft</span>
+            <ul className="space-y-3 text-sm text-[#F4EEE3]/80">
+              <li><Link href="/craft" className="transition-colors hover:text-[#C9A96A]">Kalai & Tinning</Link></li>
+              <li><Link href="/craft" className="transition-colors hover:text-[#C9A96A]">Metallurgy</Link></li>
+              <li><Link href="/about" className="transition-colors hover:text-[#C9A96A]">Heritage</Link></li>
             </ul>
           </div>
 
-          {/* Heritage & Service */}
-          <div className="space-y-3">
-            <span className="text-[11px] uppercase tracking-editorial font-semibold text-[#D8B875] block">
-              Bespoke Service
-            </span>
-            <ul className="space-y-2 text-xs text-[#FAF7F2]/80">
-              <li>
-                <Link
-                  href="/enquire"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  Wedding & Trousseau Gifting
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/enquire"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  Private Hospitality Orders
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  The Thathera Lineage
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="hover:text-[#D8B875] transition-colors"
-                >
-                  Showroom Appointments
-                </Link>
-              </li>
+          <div className="space-y-4">
+            <span className="text-[10px] uppercase tracking-[0.22em] text-[#C9A96A]">Visit</span>
+            <ul className="space-y-3 text-sm text-[#F4EEE3]/80">
+              <li><Link href="/about" className="transition-colors hover:text-[#C9A96A]">About</Link></li>
+              <li><Link href="/journal" className="transition-colors hover:text-[#C9A96A]">Journal</Link></li>
+              <li><Link href="/contact" className="transition-colors hover:text-[#C9A96A]">Contact</Link></li>
             </ul>
+          </div>
+
+          <div className="space-y-4">
+            <span className="text-[10px] uppercase tracking-[0.22em] text-[#C9A96A]">Newsletter</span>
+            <div className="flex items-center border border-[#B58A3C]/35 bg-[#F4EEE3]/5">
+              <input
+                type="email"
+                placeholder="Email address"
+                className="h-12 flex-1 bg-transparent px-4 text-sm text-[#F4EEE3] placeholder:text-[#F4EEE3]/50 outline-none"
+              />
+              <button type="button" className="h-12 border-l border-[#B58A3C]/35 px-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C9A96A]">
+                Join
+              </button>
+            </div>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-[#F4EEE3]/80 hover:text-[#C9A96A]">
+              <Camera className="h-4 w-4" />
+              Instagram
+            </a>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#FAF7F2]/60 gap-4">
-          <p>
-            &copy; {new Date().getFullYear()} {BRAND.legalName}. All rights
-            reserved.
-          </p>
-          <div className="flex items-center gap-6">
-            <Link
-              href="/craft"
-              className="hover:text-[#D8B875] transition-colors"
-            >
-              Metal Care
-            </Link>
-            <Link
-              href="/contact"
-              className="hover:text-[#D8B875] transition-colors"
-            >
-              Concierge
-            </Link>
-            <span className="text-[#C9A45C30]">|</span>
-            <Link
-              href="/studio/login"
-              className="hover:text-[#D8B875] transition-colors font-medium text-[#D8B875]/80"
-            >
-              Tamraaya Studio Portal &rarr;
-            </Link>
+        <div className="flex flex-col items-center justify-between gap-4 pt-8 text-[11px] text-[#F4EEE3]/65 sm:flex-row">
+          <p>&copy; {new Date().getFullYear()} {BRAND.legalName}. All rights reserved.</p>
+          <div className="flex items-center gap-5">
+            <Link href="/craft" className="transition-colors hover:text-[#C9A96A]">Metal Care</Link>
+            <Link href="/contact" className="transition-colors hover:text-[#C9A96A]">Concierge</Link>
+            <Link href="/studio/login" className="font-medium text-[#C9A96A] transition-colors hover:text-[#F4EEE3]">Studio Portal</Link>
           </div>
         </div>
       </div>

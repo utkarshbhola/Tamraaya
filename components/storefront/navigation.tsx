@@ -29,11 +29,10 @@ export function StorefrontNavigation() {
   };
 
   const navLinks = [
-    { name: "Collections", href: "/collections" },
-    { name: "Shop Catalogue", href: "/products" },
+    { name: "Collection", href: "/collections" },
     { name: "Our Craft", href: "/craft" },
-    { name: "Artisan Lineage", href: "/about" },
-    { name: "Concierge", href: "/contact" },
+    { name: "Journal", href: "/about" },
+    { name: "About", href: "/about" },
   ];
 
   const handleSearchSubmit = (e: React.FormEvent) => {
@@ -53,10 +52,10 @@ export function StorefrontNavigation() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-40 w-full transition-all duration-300",
+          "sticky top-0 z-40 w-full transition-all duration-500",
           isScrolled
-            ? "bg-[#1B0B22]/95 backdrop-blur-md border-b border-[#C9A45C30] shadow-md py-3"
-            : "bg-[#1B0B22] border-b border-[#C9A45C20] py-4"
+            ? "border-b border-[#C9A96A]/35 bg-[#2B1A13]/95 py-3 shadow-[0_12px_35px_rgba(43,26,19,0.12)] backdrop-blur-md"
+            : "border-b border-[#C9A96A]/20 bg-[#2B1A13]/75 py-4 backdrop-blur-sm"
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,11 +63,11 @@ export function StorefrontNavigation() {
             {/* Left: Brand Identity */}
             <div className="flex items-center gap-6">
               <Link href="/" className="group flex flex-col">
-                <span className="font-serif text-2xl sm:text-3xl tracking-wide-editorial text-[#FAF7F2] group-hover:text-[#D8B875] transition-colors">
+                <span className="font-serif text-2xl tracking-wide-editorial text-[#F4EEE3] transition-colors group-hover:text-[#C9A96A] sm:text-3xl">
                   TAMRAAYA
                 </span>
-                <span className="text-[9px] uppercase tracking-editorial text-[#D8B875]/80 -mt-1 font-sans hidden sm:block">
-                  Rooted in Tradition
+                <span className="-mt-1 hidden text-[9px] uppercase tracking-[0.18em] text-[#F4EEE3]/80 font-sans sm:block">
+                  The Artisan&apos;s Hand
                 </span>
               </Link>
             </div>
@@ -83,15 +82,15 @@ export function StorefrontNavigation() {
                     href={link.href}
                     onClick={closeNavigationPanels}
                     className={cn(
-                      "text-xs uppercase tracking-editorial transition-colors relative py-1",
+                      "relative py-1 text-[10px] uppercase tracking-[0.22em] text-[#F4EEE3] transition-colors",
                       isActive
-                        ? "text-[#D8B875] font-semibold"
-                        : "text-[#FAF7F2]/80 hover:text-[#D8B875]"
+                        ? "font-semibold text-[#C9A96A]"
+                        : "hover:text-[#C9A96A]"
                     )}
                   >
                     {link.name}
                     {isActive && (
-                      <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#C9A45C]" />
+                      <span className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-[#B58A3C] transition-all duration-300" />
                     )}
                   </Link>
                 );
@@ -108,7 +107,7 @@ export function StorefrontNavigation() {
                   setMobileMenuOpen(false);
                 }}
                 aria-label="Search collection"
-                className="p-2 text-[#FAF7F2]/80 hover:text-[#D8B875] transition-colors"
+                className="p-2 text-[#F4EEE3] transition-colors hover:text-[#C9A96A]"
               >
                 <Search className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
@@ -118,7 +117,7 @@ export function StorefrontNavigation() {
                 href="/products?wishlist=true"
                 onClick={closeNavigationPanels}
                 aria-label="Wishlist"
-                className="p-2 text-[#FAF7F2]/80 hover:text-[#D8B875] transition-colors relative"
+                className="relative p-2 text-[#F4EEE3] transition-colors hover:text-[#C9A96A]"
               >
                 <Heart className="w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
@@ -127,7 +126,7 @@ export function StorefrontNavigation() {
               <Link
                 href="/enquire"
                 onClick={closeNavigationPanels}
-                className="hidden sm:inline-flex items-center justify-center h-9 px-4 text-[11px] uppercase tracking-wider font-semibold bg-[#C9A45C] text-[#1B0B22] hover:bg-[#D8B875] transition-all"
+                className="hidden h-9 items-center justify-center bg-[#B58A3C] px-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2B1A13] transition-all hover:bg-[#C9A96A] sm:inline-flex"
               >
                 Enquire
               </Link>
@@ -140,7 +139,7 @@ export function StorefrontNavigation() {
                   setSearchOpen(false);
                 }}
                 aria-label="Toggle navigation menu"
-                className="p-2 text-[#FAF7F2] lg:hidden hover:text-[#D8B875] transition-colors"
+                className="p-2 text-[#F4EEE3] transition-colors hover:text-[#C9A96A] lg:hidden"
               >
                 {mobileMenuOpen ? (
                   <X className="w-6 h-6" />

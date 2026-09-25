@@ -61,26 +61,26 @@ export default function StudioProductsPage() {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white border border-[#1D1B1A15] p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+      <div className="flex flex-col items-center justify-between gap-4 border border-[#B8A58D]/60 bg-[#FFFDF8] p-4 shadow-[0_10px_35px_rgba(43,26,19,0.04)] sm:flex-row">
         <div className="relative w-full sm:w-80">
-          <Search className="w-4 h-4 absolute left-3 top-3 text-[#1D1B1A]/40" />
+          <Search className="absolute left-3 top-3 h-4 w-4 text-[#2B1A13]/40" />
           <input
             type="text"
             placeholder="Search by title or SKU..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full h-10 pl-9 pr-3 text-xs border border-[#1D1B1A20] focus:border-[#C9A45C] focus:outline-none"
+            className="h-10 w-full border border-[#B8A58D]/60 bg-[#FFFDF8] pl-9 pr-3 text-xs text-[#2B1A13] placeholder:text-[#2B1A13]/50 focus:border-[#B58A3C] focus:outline-none focus:ring-1 focus:ring-[#B58A3C]/60"
           />
         </div>
 
-        <div className="flex items-center gap-2 w-full sm:w-auto">
-          <span className="text-[11px] uppercase tracking-wider text-[#1D1B1A]/60 font-semibold">
+        <div className="flex w-full items-center gap-2 sm:w-auto">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2B1A13]/70">
             Status:
           </span>
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="h-10 text-xs border border-[#1D1B1A20] px-3 bg-white focus:outline-none focus:border-[#C9A45C]"
+            className="h-10 border border-[#B8A58D]/60 bg-[#FFFDF8] px-3 text-xs text-[#2B1A13] focus:border-[#B58A3C] focus:outline-none focus:ring-1 focus:ring-[#B58A3C]/60"
           >
             <option value="all">All Statuses ({products.length})</option>
             <option value="published">Published</option>
@@ -90,23 +90,22 @@ export default function StudioProductsPage() {
         </div>
       </div>
 
-      {/* Products Data Table */}
-      <div className="bg-white border border-[#1D1B1A15] shadow-sm overflow-hidden">
+      <div className="overflow-hidden border border-[#B8A58D]/60 bg-[#FFFDF8] shadow-[0_10px_35px_rgba(43,26,19,0.04)]">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs border-collapse">
+          <table className="w-full border-collapse text-left text-xs">
             <thead>
-              <tr className="bg-[#FAF7F2] border-b border-[#1D1B1A15] text-[#1D1B1A]/70 uppercase tracking-wider text-[11px]">
-                <th className="py-3 px-4 w-16">Image</th>
-                <th className="py-3 px-4">Product Name</th>
-                <th className="py-3 px-4">Primary SKU</th>
-                <th className="py-3 px-4">Category</th>
-                <th className="py-3 px-4">Material</th>
-                <th className="py-3 px-4">Status</th>
-                <th className="py-3 px-4">Variants</th>
-                <th className="py-3 px-4 text-right">Actions</th>
+              <tr className="border-b border-[#B8A58D]/40 bg-[#F4EEE3] text-[#2B1A13]/70 uppercase tracking-[0.18em] text-[11px]">
+                <th className="w-16 px-4 py-3">Image</th>
+                <th className="px-4 py-3">Product Name</th>
+                <th className="px-4 py-3">Primary SKU</th>
+                <th className="px-4 py-3">Category</th>
+                <th className="px-4 py-3">Material</th>
+                <th className="px-4 py-3">Status</th>
+                <th className="px-4 py-3">Variants</th>
+                <th className="px-4 py-3 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#1D1B1A10]">
+            <tbody className="divide-y divide-[#B8A58D]/30">
               {filteredProducts.map((p) => {
                 const heroImg =
                   p.images.find((img) => img.image_type === "hero") || p.images[0];

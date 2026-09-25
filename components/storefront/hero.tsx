@@ -3,67 +3,100 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export function StorefrontHero() {
   return (
-    <section className="relative w-full min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#1B0B22] text-[#FAF7F2]">
-      {/* Background Hero Image */}
+    <section className="relative flex min-h-[92vh] w-full items-center justify-center overflow-hidden bg-[#2B1A13] text-[#F4EEE3]">
       <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=85&w=2000&auto=format&fit=crop"
-          alt="Tamraaya Hand-hammered metalware"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center scale-100 animate-in fade-in zoom-in-105 duration-1000 opacity-60"
-        />
-        {/* Editorial vignetting and gradient blends */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1B0B22] via-[#1B0B22]/70 to-[#1B0B22]/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1B0B22] via-transparent to-[#1B0B22]/60" />
+        <motion.div
+          initial={{ scale: 1.15, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=85&w=2000&auto=format&fit=crop"
+            alt="Tamraaya Hand-hammered metalware"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-70"
+          />
+        </motion.div>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(43,26,19,0.84),rgba(43,26,19,0.64),rgba(43,26,19,0.24))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(43,26,19,0.18),rgba(43,26,19,0.72))]" />
       </div>
 
-      {/* Hero Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center flex flex-col items-center space-y-6">
-        {/* Subtle Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-[#C9A45C60] bg-[#1B0B22]/80 backdrop-blur-sm text-[10px] sm:text-[11px] uppercase tracking-editorial text-[#D8B875] animate-in fade-in slide-in-from-bottom-2 duration-700">
-          <Sparkles className="w-3.5 h-3.5 text-[#C9A45C]" />
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 mx-auto flex max-w-6xl flex-col items-center space-y-6 px-4 py-24 text-center sm:px-6 lg:px-8"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.7 }}
+          className="inline-flex items-center gap-2 border border-[#B58A3C]/60 bg-[#2B1A13]/70 px-4 py-1.5 text-[10px] uppercase tracking-[0.22em] text-[#D8B875] backdrop-blur-sm"
+        >
+          <Sparkles className="h-3.5 w-3.5 text-[#C9A96A]" />
           <span>Heritage Metalcraft &bull; Handcrafted in India</span>
-        </div>
+        </motion.div>
 
-        {/* Dominant Headline */}
-        <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-[#FAF7F2] font-normal leading-[1.05] animate-in fade-in slide-in-from-bottom-3 duration-800">
-          THE ARTISAN&apos;S <br className="hidden sm:inline" />
-          <span className="italic font-light text-[#D8B875]">HAND</span>
-        </h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35, duration: 0.9, ease: "easeOut" }}
+          className="font-serif text-5xl leading-[0.9] tracking-[0.04em] text-[#F4EEE3] sm:text-6xl md:text-7xl lg:text-[7rem]"
+        >
+          TAMRAYA
+          <span className="mt-3 block font-light italic tracking-[0.04em] text-[#C9A96A]">
+            THE ARTISAN&apos;S HAND
+          </span>
+        </motion.h1>
 
-        {/* Supporting Copy */}
-        <p className="text-sm sm:text-lg md:text-xl text-[#FAF7F2]/80 font-light max-w-xl mx-auto tracking-wide leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-900">
-          Rooted in tradition. <br className="sm:hidden" />
-          Designed for you.
-        </p>
+        <motion.p
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.55, duration: 0.8 }}
+          className="max-w-2xl text-sm uppercase tracking-[0.18em] text-[#F4EEE3]/80 sm:text-base"
+        >
+          Crafted with tradition.
+          <span className="mx-3 text-[#C9A96A]">•</span>
+          Designed for generations.
+        </motion.p>
 
-        {/* Decorative Divider */}
-        <div className="w-20 h-[1.5px] bg-[#C9A45C] my-2 opacity-80" />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.7, duration: 0.8 }}
+          className="h-[1px] w-20 bg-[#B58A3C]"
+        />
 
-        {/* CTAs */}
-        <div className="pt-4 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-5 duration-1000">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.85, duration: 0.8 }}
+          className="flex w-full flex-col items-center gap-4 pt-2 sm:w-auto sm:flex-row"
+        >
           <Link
             href="/collections"
-            className="w-full sm:w-auto inline-flex items-center justify-center h-13 px-8 text-xs uppercase tracking-editorial font-semibold bg-[#C9A45C] text-[#1B0B22] hover:bg-[#D8B875] transition-all duration-300 shadow-lg hover:shadow-xl group"
+            className="group inline-flex h-12 items-center justify-center gap-2 border border-[#B58A3C] bg-[#B58A3C] px-7 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#2B1A13] transition-all duration-300 hover:bg-[#C9A96A]"
           >
-            <span>EXPLORE COLLECTIONS</span>
-            <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+            <span>Explore Collection</span>
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
 
           <Link
             href="/craft"
-            className="w-full sm:w-auto inline-flex items-center justify-center h-13 px-8 text-xs uppercase tracking-editorial font-semibold border border-[#FAF7F2]/40 text-[#FAF7F2] hover:border-[#C9A45C] hover:text-[#D8B875] hover:bg-[#1B0B22]/50 backdrop-blur-sm transition-all duration-300"
+            className="inline-flex h-12 items-center justify-center border border-[#F4EEE3]/35 bg-transparent px-7 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#F4EEE3] transition-all duration-300 hover:border-[#B58A3C] hover:text-[#C9A96A]"
           >
-            OUR CRAFT
+            Discover Our Craft
           </Link>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

@@ -29,19 +29,19 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A45C] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 select-none tracking-wider text-xs uppercase";
+      "inline-flex items-center justify-center font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58A3C] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 select-none tracking-wider text-xs uppercase";
 
     const variants = {
       primary:
-        "bg-[#1B0B22] text-[#D8B875] border border-[#C9A45C40] hover:bg-[#2B1234] hover:border-[#C9A45C] active:scale-[0.99]",
-      gold: "bg-[#C9A45C] text-[#1B0B22] font-semibold hover:bg-[#D8B875] shadow-sm active:scale-[0.99]",
+        "bg-[#2B1A13] text-[#F4EEE3] border border-[#B58A3C]/40 hover:bg-[#4A2F20] hover:border-[#B58A3C] active:scale-[0.99]",
+      gold: "bg-[#B58A3C] text-[#2B1A13] font-semibold hover:bg-[#C9A96A] shadow-sm active:scale-[0.99]",
       "gold-outline":
-        "border border-[#C9A45C] text-[#C9A45C] bg-transparent hover:bg-[#C9A45C15] active:scale-[0.99]",
-      plum: "bg-[#2B1234] text-[#F6F0E6] border border-[#2B1234] hover:bg-[#1B0B22] active:scale-[0.99]",
+        "border border-[#B58A3C] text-[#B58A3C] bg-transparent hover:bg-[#B58A3C]/10 active:scale-[0.99]",
+      plum: "bg-[#4A2F20] text-[#F4EEE3] border border-[#4A2F20] hover:bg-[#2B1A13] active:scale-[0.99]",
       "plum-outline":
-        "border border-[#1B0B22] text-[#1B0B22] bg-transparent hover:bg-[#1B0B2210] active:scale-[0.99]",
+        "border border-[#2B1A13] text-[#2B1A13] bg-transparent hover:bg-[#2B1A13]/5 active:scale-[0.99]",
       ghost:
-        "text-[#1D1B1A] hover:bg-[#1D1B1A10] hover:text-[#1B0B22] border-transparent",
+        "text-[#2B1A13] hover:bg-[#2B1A13]/5 hover:text-[#2B1A13] border-transparent",
       whatsapp:
         "bg-[#25D366] text-white hover:bg-[#20ba59] font-medium shadow-sm active:scale-[0.99]",
     };

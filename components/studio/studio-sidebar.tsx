@@ -80,29 +80,27 @@ export function StudioSidebar() {
   ];
 
   return (
-    <aside className="w-64 bg-[#1B0B22] text-[#FAF7F2] flex flex-col flex-shrink-0 border-r border-[#C9A45C25] min-h-screen">
-      {/* Studio Brand Bar */}
-      <div className="h-16 px-6 flex items-center justify-between border-b border-[#C9A45C20]">
+    <aside className="w-64 min-h-screen flex-shrink-0 border-r border-[#B8A58D]/60 bg-[#2B1A13] text-[#F4EEE3] flex flex-col">
+      <div className="h-16 px-6 flex items-center justify-between border-b border-[#B8A58D]/30">
         <Link href="/studio/dashboard" className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded bg-[#C9A45C] text-[#1B0B22] flex items-center justify-center font-serif font-bold text-sm">
+          <div className="flex h-7 w-7 items-center justify-center bg-[#B58A3C] text-sm font-bold text-[#2B1A13] font-serif">
             T
           </div>
           <div>
-            <span className="font-serif text-lg tracking-wider text-[#FAF7F2] font-semibold block leading-none">
+            <span className="block font-serif text-lg font-semibold tracking-wider text-[#F4EEE3] leading-none">
               TAMRAAYA
             </span>
-            <span className="text-[9px] uppercase tracking-widest text-[#D8B875] font-sans font-medium">
+            <span className="text-[9px] font-sans uppercase tracking-[0.2em] text-[#C9A96A] font-medium">
               Studio Portal
             </span>
           </div>
         </Link>
       </div>
 
-      {/* Navigation Sections */}
       <div className="flex-1 overflow-y-auto px-4 py-6 space-y-6">
         {navSections.map((sec) => (
           <div key={sec.title} className="space-y-1.5">
-            <span className="px-3 text-[10px] uppercase tracking-wider text-[#D8B875]/70 font-semibold block">
+            <span className="px-3 text-[10px] uppercase tracking-[0.22em] text-[#C9A96A]/80 font-semibold block">
               {sec.title}
             </span>
             <div className="space-y-0.5">
@@ -117,10 +115,10 @@ export function StudioSidebar() {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "flex items-center gap-3 px-3 py-2 text-xs uppercase tracking-wider transition-colors rounded-sm",
+                      "flex items-center gap-3 rounded-sm px-3 py-2 text-xs uppercase tracking-[0.18em] transition-colors",
                       isActive
-                        ? "bg-[#2B1234] text-[#D8B875] font-semibold border-l-2 border-[#C9A45C]"
-                        : "text-[#FAF7F2]/70 hover:bg-[#2B1234]/60 hover:text-white"
+                        ? "border-l-2 border-[#B58A3C] bg-[#4A2F20] text-[#F4EEE3] font-semibold"
+                        : "text-[#F4EEE3]/75 hover:bg-[#4A2F20]/80 hover:text-[#F4EEE3]"
                     )}
                   >
                     <Icon className="w-4 h-4 text-current" />
@@ -133,24 +131,23 @@ export function StudioSidebar() {
         ))}
       </div>
 
-      {/* Footer Utility Actions */}
-      <div className="p-4 border-t border-[#C9A45C20] space-y-2 bg-[#17091D]">
+      <div className="space-y-2 border-t border-[#B8A58D]/30 bg-[#231611] p-4">
         <Link
           href="/"
           target="_blank"
-          className="flex items-center justify-between px-3 py-2 text-xs text-[#FAF7F2]/75 hover:text-[#D8B875] hover:bg-[#2B1234] transition-colors"
+          className="flex items-center justify-between rounded-sm px-3 py-2 text-xs text-[#F4EEE3]/80 transition-colors hover:bg-[#4A2F20] hover:text-[#F4EEE3]"
         >
           <span className="flex items-center gap-2">
             <Globe className="w-3.5 h-3.5" />
             <span>Live Storefront</span>
           </span>
-          <span className="text-[10px] text-[#C9A45C]">&nearr;</span>
+          <span className="text-[10px] text-[#C9A96A]">&nearr;</span>
         </Link>
 
         <button
           type="button"
           onClick={handleSignOut}
-          className="w-full flex items-center gap-2 px-3 py-2 text-xs text-rose-300 hover:text-rose-100 hover:bg-rose-950/40 transition-colors"
+          className="w-full flex items-center gap-2 rounded-sm px-3 py-2 text-xs text-[#F4EEE3]/80 transition-colors hover:bg-[#4A2F20] hover:text-[#F4EEE3]"
         >
           <LogOut className="w-3.5 h-3.5" />
           <span>Exit Studio</span>

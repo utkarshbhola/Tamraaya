@@ -7,13 +7,13 @@ import { Badge } from "@/components/ui/badge";
 
 export function StudioHeader() {
   return (
-    <header className="h-16 bg-[#FAF7F2] border-b border-[#1D1B1A15] px-6 sm:px-8 flex items-center justify-between">
+    <header className="h-16 border-b border-[#B8A58D]/60 bg-[#FFFDF8] px-6 sm:px-8 flex items-center justify-between">
       <div className="flex items-center gap-3">
-        <span className="text-xs font-semibold uppercase tracking-wider text-[#8C6D2B]">
+        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#4A2F20]">
           Studio Administration
         </span>
-        <span className="text-[#1D1B1A30]">|</span>
-        <Badge variant="plum" className="text-[9px] tracking-widest">
+        <span className="text-[#B8A58D]">|</span>
+        <Badge variant="plum" className="text-[9px] tracking-[0.18em]">
           Production Environment
         </Badge>
       </div>
@@ -22,21 +22,21 @@ export function StudioHeader() {
         <Link
           href="/"
           target="_blank"
-          className="hidden sm:inline-flex items-center gap-1.5 text-xs uppercase tracking-wider font-semibold text-[#1B0B22] hover:text-[#8C6D2B] transition-colors"
+          className="hidden sm:inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.18em] font-semibold text-[#2B1A13] transition-colors hover:text-[#B58A3C]"
         >
           <Globe className="w-3.5 h-3.5" />
           <span>View Public Storefront &nearr;</span>
         </Link>
 
-        <div className="flex items-center gap-2 pl-4 border-l border-[#1D1B1A15]">
-          <div className="w-8 h-8 rounded-full bg-[#1B0B22] text-[#D8B875] flex items-center justify-center font-serif text-xs font-semibold border border-[#C9A45C40]">
+        <div className="flex items-center gap-2 pl-4 border-l border-[#B8A58D]/60">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#B58A3C]/40 bg-[#2B1A13] font-serif text-xs font-semibold text-[#C9A96A]">
             SA
           </div>
           <div className="hidden md:flex flex-col text-left">
-            <span className="text-xs font-semibold text-[#1B0B22] leading-none">
+            <span className="text-xs font-semibold text-[#2B1A13] leading-none">
               Administrator
             </span>
-            <span className="text-[10px] text-[#8C6D2B] uppercase tracking-wider">
+            <span className="text-[10px] uppercase tracking-[0.18em] text-[#4A2F20]">
               Super Admin
             </span>
           </div>
