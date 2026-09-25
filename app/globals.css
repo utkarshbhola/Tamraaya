@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-plum-950: #1B0B22;
+  --color-plum-900: #2B1234;
+  --color-plum-800: #3D194B;
+  --color-plum-700: #552366;
+  --color-gold-antique: #C9A45C;
+  --color-gold-warm: #D8B875;
+  --color-gold-light: #F3EAD8;
+  --color-walnut: #3A2419;
+  --color-walnut-dark: #26160F;
+  --color-ivory: #F6F0E6;
+  --color-ivory-light: #FAF7F2;
+  --color-ivory-dark: #ECE3D4;
+  --color-charcoal: #1D1B1A;
+  --color-charcoal-muted: #524C4A;
+  --color-charcoal-light: #827A77;
+
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  --font-sans: var(--font-manrope), 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:root {
+  --background: #F6F0E6;
+  --foreground: #1D1B1A;
+  --plum: #1B0B22;
+  --plum-surface: #2B1234;
+  --gold: #C9A45C;
+  --gold-warm: #D8B875;
+  --walnut: #3A2419;
+  --ivory: #F6F0E6;
+  --charcoal: #1D1B1A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Editorial typography utilities */
+.font-display {
+  font-family: var(--font-serif);
+  letter-spacing: 0.04em;
+}
+
+.tracking-editorial {
+  letter-spacing: 0.18em;
+}
+
+.tracking-wide-editorial {
+  letter-spacing: 0.28em;
+}
+
+/* Subtle luxury custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F6F0E6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A45C40;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A45C80;
+}
+
+/* Luxury text selection */
+::selection {
+  background-color: #2B1234;
+  color: #D8B875;
+}
